@@ -3,7 +3,6 @@
 #include "../vault/Vault.h"
 #include "../input/Buttons.h"
 
-
 class VaultMenu
 {
 
@@ -13,19 +12,18 @@ private:
 
     int selected;
 
-
 public:
 
     void init(Vault* vault);
 
-
     void handle(ButtonEvent event);
-
 
     int getSelected();
 
+    int getCount();
+
+    bool isAddAccountSelected();
 
     const char* getCurrentName();
-
 
 };

@@ -8,9 +8,13 @@ class Vault
 
 private:
 
-    Account accounts[5];
+    static const int MAX_ACCOUNTS = 10;
 
-    int count;
+    Account accounts[MAX_ACCOUNTS];
+
+    int count = 0;
+
+    Account invalidAccount;
 
 
 public:
@@ -21,6 +25,27 @@ public:
     int getCount();
 
 
-    Account get(int index);
+    bool isValidIndex(int index);
+
+
+    Account& get(int index);
+
+
+    bool add(const Account& account);
+
+
+    bool remove(int index);
+
+
+    bool update(
+        int index,
+        const Account& account
+    );
+
+
+    void clear();
+
+
+    bool exists(int id);
 
 };
